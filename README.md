@@ -14,7 +14,7 @@ Finally to close a terminal `ctl+d` and to close the contatiner go to the othiga
 Simply add the depenedcy to requiremtn.txt 
 
 # Launching demo 
-To run moveit RVIZ demo in the terminal run `roslaunch fanuc_cr35ia_moveit_config demo.launch`
+To run moveit RVIZ demo in the terminal run `roslaunch fanuc_cr7ial_moveit_config demo.launch`
 
 # VsCode
 The container can be used as an environement to run code. To connect to the container use `Dev Containers` extension

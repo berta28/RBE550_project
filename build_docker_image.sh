@@ -1,5 +1,5 @@
 #! /bin/bash
+VERSION=$(cat version.txt)
 docker build \
-	--progress plain \
-	-t "rbe550_project:0.0.0" \
+	-t "rbe550_project:${VERSION}" \
 	-f Dockerfile . 

@@ -15,11 +15,13 @@ WORKDIR ${ROS_WORKSPACE}
 
 # RUN source /opt/ros/noetic/setup.bash
 RUN catkin config --extend /opt/ros/noetic --cmake-args -DCMAKE_BUILD_TYPE=Release
-RUN apt-get -y install ros-noetic-opw-kinematics
+RUN apt-get -y install ros-noetic-moveit-opw-kinematics-plugin
 RUN git clone --recursive -b melodic-devel https://github.com/ros-industrial/fanuc.git src/fanuc
 RUN rosdep update -y
 RUN echo 'source ${ROS_WORKSPACE}/devel/setup.bash'
 RUN rosdep install -y --from-paths src/ --ignore-src --rosdistro noetic
+
+COPY moveit_configs/fanuc_cr7ial_moveit_config src/fanuc/moveit_cfgs/fanuc_cr7ial_moveit_config
 
 RUN source /opt/ros/noetic/setup.bash && catkin build --no-env-cache
 RUN source ${ROS_WORKSPACE}/devel/setup.bash

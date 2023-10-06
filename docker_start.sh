@@ -1,6 +1,6 @@
 #! /bin/bash
-
-DOCKER_IMAGE="rbe550_project:0.0.0"
+VERSION=$(cat version.txt)
+DOCKER_IMAGE="rbe550_project:${VERSION}"
 CMD_S="bash"
 xhost +
 docker run \
