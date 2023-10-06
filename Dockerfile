@@ -12,6 +12,7 @@ RUN apt-get -y install git
 
 RUN mkdir ~/ws_moveit
 WORKDIR ${ROS_WORKSPACE}
+RUN apt-get install ros-noetic-moveit
 
 # RUN source /opt/ros/noetic/setup.bash
 RUN catkin config --extend /opt/ros/noetic --cmake-args -DCMAKE_BUILD_TYPE=Release
